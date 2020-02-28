@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LPM.Web.Models
+namespace LPM.Web.ViewModels
 {
     public class SearchViewModel
     {

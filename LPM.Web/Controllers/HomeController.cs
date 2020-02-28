@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using LPM.Web.Models;
 using Microsoft.AspNetCore.Authorization;
+using LPM.Web.ViewModels;
 
 namespace LPM.Web.Controllers
 {

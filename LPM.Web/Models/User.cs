@@ -17,7 +17,7 @@ namespace LPM.Web.Models
         public string PhoneNumber { get; set; }
       
         public int Gender { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime RegistrationDate { get; set; }

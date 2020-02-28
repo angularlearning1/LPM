@@ -1,24 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Web.Mvc;
 
-namespace LPM.Web.Util
+namespace LPM.Data
 {
-    public class EnumModel
+    public static class DropDownLists
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
-
-    public class ListNameValueModel
-    {
-        public string Name { get; set; }
-        public string Value { get; set; }
-    }
-    public static class Utillites
-    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static List<SelectListItem> GetZodiacSigns()
         {
             List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
@@ -37,43 +28,54 @@ namespace LPM.Web.Util
             ListItemValueModels.Add(new SelectListItem() { Text = "Pisces", Value = "Pisces" });
             return ListItemValueModels;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static List<SelectListItem> GetColorComplexions()
         {
             List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
             ListItemValueModels.Add(new SelectListItem() { Text = "--Color Complexion--", Value = "" });
-            ListItemValueModels.Add(new SelectListItem() { Text = "Fair"  , Value = "Fair"   });
+            ListItemValueModels.Add(new SelectListItem() { Text = "Fair", Value = "Fair" });
             ListItemValueModels.Add(new SelectListItem() { Text = "Medium", Value = "Medium" });
-            ListItemValueModels.Add(new SelectListItem() { Text = "Olive" , Value = "Olive"  });
-            ListItemValueModels.Add(new SelectListItem() { Text = "Brown", Value = "Brown"  });
+            ListItemValueModels.Add(new SelectListItem() { Text = "Olive", Value = "Olive" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "Brown", Value = "Brown" });
             return ListItemValueModels;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static List<SelectListItem> GetBloodGroups()
         {
             List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
             ListItemValueModels.Add(new SelectListItem() { Text = "--Blood Group--", Value = "" });
-            ListItemValueModels.Add(new SelectListItem() { Text = "A+", Value = "A+"  });
-            ListItemValueModels.Add(new SelectListItem() { Text = "B+" , Value = "B+"  });
+            ListItemValueModels.Add(new SelectListItem() { Text = "A+", Value = "A+" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "B+", Value = "B+" });
             ListItemValueModels.Add(new SelectListItem() { Text = "AB+", Value = "AB+" });
-            ListItemValueModels.Add(new SelectListItem() { Text = "O+" , Value = "O+"  });
-            ListItemValueModels.Add(new SelectListItem() { Text = "A-" , Value = "A-"  });
-            ListItemValueModels.Add(new SelectListItem() { Text = "B-" , Value = "B-"  });
+            ListItemValueModels.Add(new SelectListItem() { Text = "O+", Value = "O+" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "A-", Value = "A-" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "B-", Value = "B-" });
             ListItemValueModels.Add(new SelectListItem() { Text = "AB-", Value = "AB-" });
-            ListItemValueModels.Add(new SelectListItem() { Text = "O-" , Value = "O-"  });
+            ListItemValueModels.Add(new SelectListItem() { Text = "O-", Value = "O-" });
             return ListItemValueModels;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static List<SelectListItem> GetMaritalStatuses()
         {
             List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
             ListItemValueModels.Add(new SelectListItem() { Text = "--Marital Status--", Value = "" });
-            ListItemValueModels.Add(new SelectListItem() { Text = "Single" , Value = "Single" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "Single", Value = "Single" });
             ListItemValueModels.Add(new SelectListItem() { Text = "Divorced", Value = "Divorced" });
             return ListItemValueModels;
         }
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static List<SelectListItem> GetSearchOrders()
         {
             List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
@@ -83,13 +85,5 @@ namespace LPM.Web.Util
             ListItemValueModels.Add(new SelectListItem() { Text = "Login Time", Value = "3" });
             return ListItemValueModels;
         }
-      
     }
-    public enum SearchOrderEnum
-    {
-        Name = 1,
-        Age = 2,
-        LoginTime = 3,
-    }
-
 }

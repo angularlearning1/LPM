@@ -1,6 +1,6 @@
 using System;
 
-namespace LPM.Web.Models
+namespace LPM.Web.ViewModels
 {
     public class ErrorViewModel
     {

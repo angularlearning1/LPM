@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using DotNetOpenAuth.InfoCard;
-using LPM.Web.Context;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace LPM.Web.Controllers
 {

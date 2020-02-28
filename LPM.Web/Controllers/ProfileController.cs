@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using LPM.Web.Context;
 using LPM.Web.Models;
 using LPM.Web.Util;
+using LPM.Web.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
