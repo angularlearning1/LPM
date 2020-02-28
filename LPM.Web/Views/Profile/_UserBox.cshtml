@@ -1,0 +1,15 @@
+﻿@model LPM.Web.Models.ProfileViewModel
+
+<div class="card card-user" style="margin-top:65px;">
+    <div class="card-header"> </div>
+    <div class="card-body">
+        <div class="author">
+            <a href="#">
+                <img alt="@Model.User.Name" class="avatar border-gray" src="@Model.UserPicture.ImageProfileThumbnailPath">
+
+                <h5 class="title text-center">@Model.User.Name</h5>
+            </a><p class="description text-center">@Model.UserDetail.AboutMe </p>
+        </div>
+    </div>
+
+</div>

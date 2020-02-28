@@ -1,0 +1,77 @@
+﻿@model LPM.Web.Models.ProfileViewModel
+
+	<container>
+		<div class="row">
+			<div class="col-md-12">
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Birth Name</label>
+					<input class="form-control" asp-for="UserDetail.BirthName" type="text" placeholder="Birth Name">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Brith Time</label>
+					<input class="form-control" asp-for="UserDetail.BrithTime" type="text" placeholder="Brith Time">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Brith Place</label>
+					<input class="form-control" asp-for="UserDetail.BrithPlace" type="text" placeholder="Brith Place">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Zodiac Sign</label>
+					<select class="form-control" asp-for="UserDetail.ZodiacSign" asp-items="ViewBag.ZodiacSigns"></select>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Gotra</label>
+					<input class="form-control" asp-for="UserDetail.Gotra" type="text" placeholder="Brith Time">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Mamkul</label>
+					<input class="form-control" asp-for="UserDetail.Mamkul" type="text" placeholder="Brith Place">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Height</label>
+					<input class="form-control" asp-for="UserDetail.Height" type="text" placeholder="Birth Name">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Blood Group</label>
+					<select class="form-control" asp-for="UserDetail.BloodGroup" asp-items="ViewBag.BloodGroups"></select>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Color Complexion</label>
+					<select class="form-control" asp-for="UserDetail.ColorComplexion" asp-items="ViewBag.ColorComplexions"></select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Marital Status</label>
+					<select class="form-control" asp-for="UserDetail.MaritalStatus" asp-items="ViewBag.MaritalStatuses"></select>
+				</div>
+			</div>
+		</div>
+	</container>

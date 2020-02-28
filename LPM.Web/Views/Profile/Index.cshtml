@@ -1,0 +1,235 @@
+﻿@model LPM.Web.Models.ProfileViewModel
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="card card-user">
+
+			<div class="card-body">
+				<div class="author">
+					<a href="#">
+						<img alt="@Model.User.Name" class="avatar border-gray" height="300" width="300" src="@Model.UserPicture.ImageProfileThumbnailPath">
+
+						<h5 class="title text-center">@Model.User.Name</h5>
+					</a><p class="description text-center">@Model.UserDetail.AboutMe </p>
+				</div>
+			</div>
+
+		</div><div class="card">
+			<div class="card-header">
+				<h5 class="card-title">Contacts</h5>
+			</div>
+			<div class="card-body">
+				<ul class="list-unstyled team-members">
+					@foreach (var item in Model.UserContacts)
+					{
+						<li>
+							<div class="row">
+								<div class="col-md-5">
+									Contact Name :
+								</div>
+								<div class="col-md-7">
+									@item.ContactName (@item.RelationShip)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-5">
+									Address :
+								</div>
+								<div class="col-md-7">
+									@item.ContactAddress <br /> @item.ContactNumber
+								</div>
+							</div>
+							<hr />
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="card card-user">
+			<div class="card-body">
+				<fieldset>
+					<legend>User</legend>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Name : @{ string Title = Model.User.Gender == 1 ? "Mr. " : "Miss. "; <text>@Title</text> } @Model.User.Name</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Email address :  @Model.User.EmailAddress</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Phone Number :  @Model.User.PhoneNumber</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Date Of Birth :  @Model.User.DateOfBirth</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Gender :  @{ string Gender = Model.User.Gender == 1 ? "Male" : "Female"; <text>@Gender</text> } </label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>User Detail</legend>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Birth Name :  @Model.UserDetail.BirthName</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Brith Time :  @Model.UserDetail.BrithTime</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Brith Place :  @Model.UserDetail.BrithPlace</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Zodiac Sign :  @Model.UserDetail.ZodiacSign</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Gotra :  @Model.UserDetail.Gotra</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Mamkul :  @Model.UserDetail.Mamkul</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Height :  @Model.UserDetail.Height</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Blood Group :  @Model.UserDetail.BloodGroup</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Color Complexion :  @Model.UserDetail.ColorComplexion</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Marital Status :  @Model.UserDetail.MaritalStatus</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Education & Profession</legend>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Education  :  @Model.UserProfession.Education</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Profession :  @Model.UserProfession.Profession</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="form-group">
+									<label>Workplace :  @Model.UserProfession.Workplace</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="form-group">
+									<label>Annual Income :  @Model.UserProfession.AnnualIncome</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Expectations</legend>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Education :  @Model.UserExpectation.Education</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Height :  @Model.UserExpectation.Height</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="form-group">
+									<label>Color Complexion :  @Model.UserExpectation.ColorComplexion</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+

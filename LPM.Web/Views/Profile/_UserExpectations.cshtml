@@ -1,0 +1,35 @@
+﻿@model LPM.Web.Models.ProfileViewModel
+
+	<container>
+		<div class="row">
+			<div class="col-md-12">
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 pr-1">
+				<div class="form-group">
+					<label>Education</label>
+					<input class="form-control" asp-for="UserExpectation.Education" type="text" placeholder="Education">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 pr-1">
+				<div class="form-group">
+					<label>Height</label>
+					<input class="form-control" asp-for="UserExpectation.Height" type="text" placeholder="Height">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 pr-1">
+				<div class="form-group">
+					<div class="form-group">
+						<label>Color Complexion</label>
+						<select class="form-control" asp-for="UserExpectation.ColorComplexion" asp-items="ViewBag.ColorComplexions"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</container>

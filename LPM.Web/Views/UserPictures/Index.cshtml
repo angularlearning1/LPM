@@ -1,0 +1,29 @@
+﻿@model IEnumerable<LPM.Web.Models.UserPicture>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+<div class="row">
+	@foreach (var item in Model)
+	{
+		string imagePath = "../img/" + item.UserId.ToString() + "/thumbnail/" + item.ProfilePicture;
+		<div class="col-md-4">
+			<div class="card">
+				<img src="@imagePath" class="card-img-top" alt="@User.Identity.Name">
+				<div class="card-body">
+
+				</div>
+				<div class="card-body">
+					<a asp-action="Edit" class="card-link" asp-route-id="@item.Id">Edit</a>
+					<a asp-action="Delete" class="card-link" asp-route-id="@item.Id">Delete</a>
+				</div>
+			</div>
+		</div>
+	}
+</div>
