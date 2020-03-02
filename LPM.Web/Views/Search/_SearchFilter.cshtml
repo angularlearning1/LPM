@@ -1,0 +1,44 @@
+﻿
+	<form asp-controller="Search" asp-action="Index"
+		  data-ajax="true"
+		  data-ajax-method="POST"
+		  data-ajax-mode="replace"
+		  data-ajax-update="#divSearchContent">
+		<br />
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group">
+					<select class="form-control" name="OrderBy" asp-items="ViewBag.OrderBy"></select>
+				</div>
+			</div>
+
+
+			<div class="col-md-3">
+				<div class="form-group">
+					<input class="form-control" name="Name" type="text" placeholder="Name">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-6">
+						<input class="form-control"  name="fromAge" type="text" placeholder="From Age">
+					</div>
+					<div class="col-md-6">
+						<input class="form-control" name="toAge" type="text" placeholder="To Age">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<select class="form-control" name="Gender" asp-items="ViewBag.Gender"></select>
+				</div>
+			</div>
+			<div class="col-md-1">
+				<input class="btn btn-success" type="submit" value="Search" />
+			</div>
+
+		</div>
+		<br />
+	</form>
+
+

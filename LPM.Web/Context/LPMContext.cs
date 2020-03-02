@@ -77,7 +77,7 @@ namespace LPM.Web.Context
                     .HasMaxLength(15)
                     .IsUnicode(false);
 
-                entity.Property(e => e.RelationShip)
+                entity.Property(e => e.Relation)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -107,7 +107,7 @@ namespace LPM.Web.Context
 
                 entity.Property(e => e.BrithTime).HasColumnType("datetime");
 
-                entity.Property(e => e.ColorComplexion)
+                entity.Property(e => e.ColorComplection)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -140,7 +140,7 @@ namespace LPM.Web.Context
 
             modelBuilder.Entity<UserExpectation>(entity =>
             {
-                entity.Property(e => e.ColorComplexion)
+                entity.Property(e => e.ColorComplection)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);

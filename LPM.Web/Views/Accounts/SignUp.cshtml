@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
                 <div class="form-control">
-                    <input class="radio" type="radio" asp-for="Gender" value="1" /> Male
+                    <input class="radio" type="radio" checked="checked" asp-for="Gender" value="1" /> Male
                     <input class="radio" type="radio" asp-for="Gender" value="2" /> Female
                 </div>
             </div>
@@ -43,8 +43,9 @@
             </div>
           
             <div class="form-group">
-                <input type="hidden" asp-for="Role" value="User"  class="form-control" />
+                <input type="hidden" asp-for="Role" value="User" class="form-control" />
                 <input type="hidden" asp-for="RegistrationDate" value="@DateTime.Now" />
+                <input type="hidden" asp-for="Active" value="true" />
                 <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>

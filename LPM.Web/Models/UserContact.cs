@@ -12,7 +12,7 @@ namespace LPM.Web.Models
         [Display(Name = "Contact Name")]
         public string ContactName { get; set; }
         [Required]
-        public string RelationShip { get; set; }
+        public string Relation{ get; set; }
         [Required]
         [Display(Name = "Phone Number")]
         public string ContactNumber { get; set; }

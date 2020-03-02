@@ -15,6 +15,7 @@ namespace LPM.Web.Controllers
     public class AccountsController : Controller
     {
         LPMContext db = null;
+        int LastLoginId = 0;
         public AccountsController()
         {
             db = new LPMContext();
@@ -43,8 +44,12 @@ namespace LPM.Web.Controllers
 
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
-                    db.UserLogin.Add(new UserLogin() { LoginDate = DateTime.Now, UserId = user.Id });
+                    if (db.UserLogin.Any(x=>x.UserId == user.Id))
+                    {
+                         LastLoginId = db.UserLogin.Where(x => x.UserId == user.Id).Max(x => x.Id);
+                    }
+                   
+                    db.UserLogin.Add(new UserLogin() { LoginDate = DateTime.Now, UserId = user.Id, LastLoginId = LastLoginId });
                     await db.SaveChangesAsync();
                 }
                 else
@@ -92,7 +97,7 @@ namespace LPM.Web.Controllers
             return View();
         }
 
-    
+
         public IActionResult ErrorNotLoggedIn()
         {
             return View();

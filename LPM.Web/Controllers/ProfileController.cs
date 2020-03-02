@@ -23,8 +23,7 @@ namespace LPM.Web.Controllers
         }
         public IActionResult Index(int id = 0)
         {
-            string sImagePath = GetImagePath(UserId);
-            string sThumbImagePath = GetThumbnailImagePath(UserId);
+          
             ProfileViewModel profileViewModel = new ProfileViewModel();
             profileViewModel.User = _context.User.Where(x => x.Id == id).First();
             profileViewModel.UserContact = new UserContact();
@@ -51,13 +50,14 @@ namespace LPM.Web.Controllers
             }
             profileViewModel.UserPictures = _context.UserPicture.Where(x => x.UserId == profileViewModel.User.Id && x.IsDefault != true).ToList();
 
-            foreach (var item in profileViewModel.UserPictures)
+            foreach (var userPicture in profileViewModel.UserPictures)
             {
-                item.ImageProfilePath = string.Format(@"..\img\{0}\{1}", item.UserId.ToString(), item.ProfilePicture);
-                item.ImageProfileThumbnailPath = string.Format(@"..\img\{0}\thumbnail\{1}", item.UserId.ToString(), item.ProfilePicture);
+                userPicture.ImageProfilePath = GetImageProfilePath(userPicture, profileViewModel.User.Gender);
+                userPicture.ImageProfileThumbnailPath = GetImageProfileThumbnailPath(userPicture, profileViewModel.User.Gender);
             }
-            profileViewModel.UserPicture.ImageProfilePath = string.Format(@"..\img\{0}\{1}", profileViewModel.UserPicture.UserId.ToString(), profileViewModel.UserPicture.ProfilePicture);
-            profileViewModel.UserPicture.ImageProfileThumbnailPath = string.Format(@"..\img\{0}\thumbnail\{1}", profileViewModel.UserPicture.UserId.ToString(), profileViewModel.UserPicture.ProfilePicture);
+            profileViewModel.UserPicture.ImageProfilePath = GetImageProfilePath(profileViewModel.UserPicture, profileViewModel.User.Gender);
+            profileViewModel.UserPicture.ImageProfileThumbnailPath = GetImageProfileThumbnailPath(profileViewModel.UserPicture, profileViewModel.User.Gender);
+
             _context.UserVisit.Add(new UserVisit() { ProfileId = id, UserId = UserId, VisitedDate = DateTime.Now });
             _context.SaveChanges();
             return View(profileViewModel);
@@ -67,8 +67,6 @@ namespace LPM.Web.Controllers
         
         public IActionResult Edit()
         {
-            string sImagePath =  GetImagePath(UserId);
-            string sThumbImagePath = GetThumbnailImagePath(UserId);
             ProfileViewModel profileViewModel = new ProfileViewModel();
             profileViewModel.User = _context.User.Where(x => x.Id == UserId).First();
             profileViewModel.UserContact = new UserContact();
@@ -95,17 +93,18 @@ namespace LPM.Web.Controllers
             }
             profileViewModel.UserPictures = _context.UserPicture.Where(x => x.UserId == profileViewModel.User.Id && x.IsDefault != true).ToList();
 
-            foreach (var item in profileViewModel.UserPictures)
+            foreach (var userPicture in profileViewModel.UserPictures)
             {
-                item.ImageProfilePath = string.Format(@"..\img\{0}\{1}", item.UserId.ToString(), item.ProfilePicture);
-                item.ImageProfileThumbnailPath =  string.Format(@"..\img\{0}\thumbnail\{1}", item.UserId.ToString(), item.ProfilePicture);
+                userPicture.ImageProfilePath = GetImageProfilePath(userPicture, profileViewModel.User.Gender);
+                userPicture.ImageProfileThumbnailPath = GetImageProfileThumbnailPath(userPicture, profileViewModel.User.Gender);
             }
-            profileViewModel.UserPicture.ImageProfilePath = string.Format(@"..\img\{0}\{1}", profileViewModel.UserPicture.UserId.ToString(), profileViewModel.UserPicture.ProfilePicture);
-            profileViewModel.UserPicture.ImageProfileThumbnailPath = string.Format(@"..\img\{0}\thumbnail\{1}", profileViewModel.UserPicture.UserId.ToString(), profileViewModel.UserPicture.ProfilePicture);
+            profileViewModel.UserPicture.ImageProfilePath = GetImageProfilePath(profileViewModel.UserPicture, profileViewModel.User.Gender);
+            profileViewModel.UserPicture.ImageProfileThumbnailPath = GetImageProfileThumbnailPath(profileViewModel.UserPicture, profileViewModel.User.Gender);
+
 
 
             ViewBag.ZodiacSigns = Utillites.GetZodiacSigns();
-            ViewBag.ColorComplexions = Utillites.GetColorComplexions();
+            ViewBag.ColorComplections = Utillites.GetColorComplections();
             ViewBag.BloodGroups = Utillites.GetBloodGroups();
             ViewBag.MaritalStatuses = Utillites.GetMaritalStatuses();
             return View(profileViewModel);
@@ -134,7 +133,7 @@ namespace LPM.Web.Controllers
                     userDetail.BloodGroup = profileViewModel.UserDetail.BloodGroup;
                     userDetail.BrithPlace = profileViewModel.UserDetail.BrithPlace;
                     userDetail.BrithTime = profileViewModel.UserDetail.BrithTime;
-                    userDetail.ColorComplexion = profileViewModel.UserDetail.ColorComplexion;
+                    userDetail.ColorComplection = profileViewModel.UserDetail.ColorComplection;
                     userDetail.Gotra = profileViewModel.UserDetail.Gotra;
                     userDetail.Height = profileViewModel.UserDetail.Height;
                     userDetail.Mamkul = profileViewModel.UserDetail.Mamkul;
@@ -147,7 +146,7 @@ namespace LPM.Web.Controllers
                 {
                     UserExpectation.Education = profileViewModel.UserExpectation.Education;
                     UserExpectation.Height = profileViewModel.UserExpectation.Height;
-                    UserExpectation.ColorComplexion = profileViewModel.UserExpectation.ColorComplexion;
+                    UserExpectation.ColorComplection = profileViewModel.UserExpectation.ColorComplection;
                 }
 
                 var UserProfession = _context.UserProfession.Where(X => X.UserId == UserId).FirstOrDefault();

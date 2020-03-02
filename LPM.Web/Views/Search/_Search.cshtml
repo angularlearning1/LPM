@@ -1,0 +1,21 @@
+﻿@model IEnumerable<LPM.Web.ViewModels.ProfileViewModel>
+
+		<div class="row">
+			@foreach (var item in Model)
+			{
+				<div class="col-md-3">
+					<div class="card">
+						<img src="@item.UserPicture.ImageProfileThumbnailPath" class="card-img-top" alt="@item.User.Name">
+						<div class="card-body">
+							<h5 class="card-title">@item.User.Name</h5>
+							<p class="card-text">@item.UserDetail.AboutMe</p>
+							<a asp-action="Index" asp-controller="Profile" class="btn btn-primary" asp-route-id="@item.User.Id">
+							<i class="fa ti-eye"></i>
+							View</a>
+
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+

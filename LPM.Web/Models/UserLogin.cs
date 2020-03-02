@@ -8,5 +8,6 @@ namespace LPM.Web.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public DateTime LoginDate { get; set; }
+        public int? LastLoginId { get; set; }
     }
 }

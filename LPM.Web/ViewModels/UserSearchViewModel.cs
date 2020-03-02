@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 
 namespace LPM.Web.ViewModels
 {
-    public class SearchViewModel
+    public class UserSearchViewModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public int FromAge { get; set; }
-        public int ToAge { get; set; }
         public int Gender { get; set; }
-        public int OrderBy { get; set; }
+        public int Age { get; set; }
+        public DateTime LoginDate { get; set; }
+    
     }
 
     

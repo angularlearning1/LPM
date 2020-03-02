@@ -58,10 +58,7 @@
 						<a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<form class="form-inline my-2 my-lg-0" asp-action="Search" asp-controller="Search">
-							<input class="form-control mr-sm-2" type="search" placeholder="Search" name="stext" aria-label="Search">
-							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-						</form>
+						<a class="nav-link" asp-controller="Search" asp-action="Index">Search</a>
 					</li>
 					<li class="nav-item dropdown float-lg-right float-md-right" style="margin-left:500px">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,14 +66,14 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" asp-controller="Profile" asp-action="Edit">Edit Profile</a>
-							<a class="dropdown-item" asp-controller="UserPictures" asp-action="Index">Photos</a>
-							<a class="dropdown-item" asp-controller="UserContacts" asp-action="Index">Contacts</a>
+							<a class="dropdown-item" asp-controller="UserSetting" asp-action="Index">Setting</a>
+							
 							<div class="dropdown-divider"></div>
 							<form class="form-inline my-2 my-lg-0" asp-method="post" asp-controller="Accounts" asp-action="LogOut">
 
 								<button class="dropdown-item" type="submit">Log Out</button>
 							</form>
-							<a class="dropdown-item" href="#">Something else here</a>
+							
 						</div>
 					</li>
 				

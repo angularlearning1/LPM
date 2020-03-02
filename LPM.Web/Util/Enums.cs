@@ -38,10 +38,10 @@ namespace LPM.Web.Util
             return ListItemValueModels;
         }
 
-        public static List<SelectListItem> GetColorComplexions()
+        public static List<SelectListItem> GetColorComplections()
         {
             List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
-            ListItemValueModels.Add(new SelectListItem() { Text = "--Color Complexion--", Value = "" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "--Color Complection--", Value = "" });
             ListItemValueModels.Add(new SelectListItem() { Text = "Fair"  , Value = "Fair"   });
             ListItemValueModels.Add(new SelectListItem() { Text = "Medium", Value = "Medium" });
             ListItemValueModels.Add(new SelectListItem() { Text = "Olive" , Value = "Olive"  });
@@ -83,7 +83,15 @@ namespace LPM.Web.Util
             ListItemValueModels.Add(new SelectListItem() { Text = "Login Time", Value = "3" });
             return ListItemValueModels;
         }
-      
+
+        public static List<SelectListItem> GetGenders()
+        {
+            List<SelectListItem> ListItemValueModels = new List<SelectListItem>();
+            ListItemValueModels.Add(new SelectListItem() { Text = "--Gender--", Value = "0" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "Male", Value = "1" });
+            ListItemValueModels.Add(new SelectListItem() { Text = "Female", Value = "2" });
+            return ListItemValueModels;
+        }
     }
     public enum SearchOrderEnum
     {

@@ -16,8 +16,8 @@ namespace LPM.Web.Models
         public string Education { get; set; }
       
         [StringLength(50)]
-        [Display(Name = "Color Complexion")]
-        public string ColorComplexion { get; set; }
+        [Display(Name = "Color Complection")]
+        public string ColorComplection { get; set; }
       
         [StringLength(50)]
         

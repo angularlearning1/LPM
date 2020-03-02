@@ -3,6 +3,8 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
+using LPM.Web.Context;
+using LPM.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +36,30 @@ namespace LPM.Web.Controllers
             string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", intUserId.ToString(), "thumbnail");
             CreateDirectory(path);
             return path;
+        }
+
+        protected string GetImageProfilePath(UserPicture userPicture, int gender)
+        {
+            if (!System.IO.File.Exists(string.Format(@"..\img\{0}\{1}", userPicture.UserId.ToString(), userPicture.ProfilePicture)))
+            {
+                if (gender == 1)
+                    return @"..\img\male.jpg";
+                else
+                    return @"..\img\female.jpg";
+            }
+            return string.Format(@"..\img\{0}\{1}", userPicture.UserId.ToString(), userPicture.ProfilePicture);
+        }
+        protected string GetImageProfileThumbnailPath(UserPicture userPicture, int gender)
+        {
+            if (!System.IO.File.Exists(string.Format(@"..\img\{0}\thumbnail\{1}", userPicture.UserId.ToString(), userPicture.ProfilePicture)))
+            {
+                if (gender == 1)
+                    return @"..\img\male_thumb.jpg";
+                else
+                    return @"..\img\female_thumb.jpg";
+            }
+                
+            return string.Format(@"..\img\{0}\thumbnail\{1}", userPicture.UserId.ToString(), userPicture.ProfilePicture);
         }
 
         protected void CreateDirectory(string path)

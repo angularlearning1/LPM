@@ -35,8 +35,8 @@ namespace LPM.Web.Models
         public string Mamkul { get; set; }
         [Required]
         [StringLength(50)]
-        [Display(Name = "Color Complexion")]
-        public string ColorComplexion { get; set; }
+        [Display(Name = "Color Complection")]
+        public string ColorComplection { get; set; }
         [Required]
         [StringLength(50)]
         public string Height { get; set; }
